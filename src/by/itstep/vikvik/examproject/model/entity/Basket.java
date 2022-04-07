@@ -22,6 +22,14 @@ public class Basket {
         }
     }
 
+    public void set(int index, Product product) throws ProductIndexOutOfBoundException{
+        if (index >= 0 && index < products.length && product != null) {
+            products[index] = product;
+        } else {
+            throw new ProductIndexOutOfBoundException();
+        }
+    }
+
     public int getSize(){
         return products.length;
     }
@@ -35,6 +43,8 @@ public class Basket {
         temp[i] = product;
         products = temp;
     }
+
+
 
     @Override
     public String toString() {
