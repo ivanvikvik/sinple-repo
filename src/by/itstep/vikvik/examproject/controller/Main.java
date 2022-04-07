@@ -5,6 +5,7 @@ import by.itstep.vikvik.examproject.model.entity.Bread;
 import by.itstep.vikvik.examproject.model.entity.Milk;
 import by.itstep.vikvik.examproject.model.entity.Orange;
 import by.itstep.vikvik.examproject.model.logic.ShopAssistance;
+import by.itstep.vikvik.examproject.model.logic.Sorter;
 import by.itstep.vikvik.examproject.util.BasketCreator;
 import by.itstep.vikvik.examproject.view.Printer;
 
@@ -19,8 +20,23 @@ public class Main {
 
         double total = ShopAssistance.calcTotalPrice(basket);
 
+        Printer.print("Before sorting: ");
         Printer.print(basket);
-        Printer.print("\n\nTotal price = " + total);
+
+
+        Printer.print("\nSorting asc: ");
+        Sorter.sortByNameAsc(basket);
+        Printer.print(basket);
+
+
+        Printer.print("\nSorting desc: ");
+        Sorter.sortByNameDesc(basket);
+        Printer.print(basket);
+
+        Printer.print("\nSorting asc: ");
+        Sorter.sortByPriceAsc(basket);
+        Printer.print(basket);
+
 
     }
 }
